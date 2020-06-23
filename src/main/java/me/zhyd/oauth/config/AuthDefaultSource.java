@@ -777,5 +777,30 @@ public enum AuthDefaultSource implements AuthSource {
         public String refresh() {
             return "https://open-oauth.jd.com/oauth2/refresh_token";
         }
+    },
+    
+    /**
+     * 58同城
+     *
+     * @since 1.15.0
+     */
+    WUBA {
+        @Override
+        public String authorize() {
+            return "https://openapi.58.com/v2/auth/show";
+        }
+
+        @Override
+        public String accessToken() {
+            return "https://openapi.58.com/v2/auth/access_token";
+        }
+        @Override
+        public String refresh() {
+            return "https://openapi.58.com/v2/auth/refresh_token";
+        }
+        @Override
+        public String userInfo() {
+        	return "https://openapi.58.com/v2/user/getuserinfo";
+        }
     }
 }
